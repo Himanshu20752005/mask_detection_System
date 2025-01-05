@@ -36,4 +36,17 @@ The system processes a dataset of **40,000 images**:
 ### 📥 Clone the Repository  
 ```bash  
 git clone https://github.com/Himanshu20752005/mask-detection-system.git  
-cd mask-detection-system  
+cd mask-detection-system
+
+
+---
+
+## 🚀 USAGE
+--------
+1. **Preprocess the dataset:**
+```python
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+train_datagen = ImageDataGenerator(rescale=1./255, rotation_range=20, zoom_range=0.2, horizontal_flip=True)
+train_generator = train_datagen.flow_from_directory('./dataset/train', target_size=(512, 512), batch_size=32, class_mode='binary')
+
